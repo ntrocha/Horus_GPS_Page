@@ -80,6 +80,7 @@
 
         marker.addTo(map);
         var url = "/index.php"
+        var plyln = [];
         var aplicacion = new function(){
             this.tparameters = document.getElementById("tparameters");
             this.nombre = document.getElementById("nombre");
@@ -104,6 +105,11 @@
                         var latlong = [Number(parameter.Lat), Number(parameter.Log)]
                         marker.setLatLng(latlong);
                         map.setView(latlong, 13);
+                        //Polilinea:
+                        plyln.push([latlong]);
+
+                        lineField = L.polyline(plyln, {color: 'blue'}).addTo(map);
+
                     }
                 );
                 
