@@ -80,11 +80,12 @@
 
         marker.addTo(map);
         var url = "/index.php"
-        var plyln = [];
+        
         var aplicacion = new function(){
             this.tparameters = document.getElementById("tparameters");
             this.nombre = document.getElementById("nombre");
             this.correo = document.getElementById("correo");
+            var plyln = [];
             //EDITAR EN UNA FUNCION LOOP ETERNO
             this.Leer = async function(){
 
@@ -104,9 +105,10 @@
                         datos+="</tr>";
                         var latlong = [Number(parameter.Lat), Number(parameter.Log)]
                         marker.setLatLng(latlong);
-                        map.setView(latlong, 13);
+                        map.setView(latlong);
                         //Polilinea:
-                        plyln.push([latlong]);
+                        
+                        plyln.push(latlong);
 
                         lineField = L.polyline(plyln, {color: 'blue'}).addTo(map);
 
