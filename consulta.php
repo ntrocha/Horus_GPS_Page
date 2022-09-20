@@ -10,10 +10,10 @@ mysqli_select_db($conn,"GPS");
 
   $id=$_POST['Id'];
   $lat=$_POST['Lat'];
-  $log=$_POST['Log'];
+  $lng=$_POST['Lng'];
   $tim=$_POST['Time'];
   
-  $qry="INSERT INTO `co_gps` (`Id`, `Lat`, `Log`, `Time`) VALUES ('$id', '$lat', '$log', '$tim')";
+  $qry="INSERT INTO `co_gps2` (`Id`, `Lat`, `Lng`, `Time`) VALUES ('$id', '$lat', '$lng', '$tim')";
   
   mysqli_query($conn,$qry);
   
