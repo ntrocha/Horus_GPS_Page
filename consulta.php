@@ -8,12 +8,11 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 $conn=mysqli_connect("database-mysql-design.cpvucarfpwnw.us-east-1.rds.amazonaws.com","admin","Nd200117");
 mysqli_select_db($conn,"GPS");
 
-  $id=$_POST['Id'];
   $lat=$_POST['Lat'];
   $lng=$_POST['Lng'];
   $tim=$_POST['Time'];
   
-  $qry="INSERT INTO `co_gps2` (`Id`, `Lat`, `Lng`, `Time`) VALUES ('$id', '$lat', '$lng', '$tim')";
+  $qry="INSERT INTO `co_gps2` (`Lat`, `Lng`, `Time`) VALUES ('$lat', '$lng', '$tim')";
   
   mysqli_query($conn,$qry);
   
